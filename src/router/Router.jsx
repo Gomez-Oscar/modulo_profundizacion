@@ -8,7 +8,10 @@ import ProductDetails from '../../pages/productDetails/ProductDetails';
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename='/modulo_profundizacion
+    '
+    >
       <Routes>
         <Route element={<Layout />}>
           <Route path='/micomponente' element={<MiComponente />} />
