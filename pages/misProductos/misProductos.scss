@@ -1,0 +1,47 @@
+.mainCardContainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b998b;
+
+  width: 20%;
+  height: 30%;
+  padding: 1em;
+  font-size: 1.2em;
+
+  border-radius: 20px;
+  margin: 1em;
+  text-align: center;
+
+  .category {
+    color: #c5d86d;
+  }
+
+  .rating {
+    color: #2e294e;
+  }
+}
+
+.mainFilterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .categoryFilter,
+  .ratingFilter {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1em;
+  }
+}

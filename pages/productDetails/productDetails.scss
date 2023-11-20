@@ -1,0 +1,17 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+
+  h1,
+  p,
+  span {
+    margin: 1em;
+  }
+
+  .red {
+    color: red;
+  }
+}
