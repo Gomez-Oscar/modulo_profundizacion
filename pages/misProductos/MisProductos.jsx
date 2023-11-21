@@ -10,12 +10,14 @@ const MisProductos = () => {
   const [rating, setRating] = useState([]);
   const [filters, setFilters] = useState({});
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filterResponse, setFilterResponse] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     getProducts().then(response => {
       setProducts(response);
+      setFilteredProducts(response);
       const categoriesList = getCategories(response);
       setCategories(categoriesList);
       const ratingList = getRatings(response);
@@ -42,19 +44,20 @@ const MisProductos = () => {
       [name]: value,
     };
 
-    let productsFiltered = [];
-    let productsCopy = [...products];
+    let productsFiltered = [...products];
 
     for (const key in filterParams) {
       if (filterParams[key]) {
-        const filteredResult = productsCopy.filter(
+        productsFiltered = productsFiltered.filter(
           product => product[key] == filterParams[key]
         );
-        productsFiltered = [...filteredResult];
       }
     }
 
     setFilters(filterParams);
+    setFilterResponse(() =>
+      productsFiltered.length > 0 ? '' : 'There are no results'
+    );
     setFilteredProducts(productsFiltered);
   };
 
@@ -102,14 +105,12 @@ const MisProductos = () => {
       </section>
 
       <section className='mainCardContainer'>
-        {filteredProducts.length > 0 ? (
+        {filteredProducts.length ? (
           filteredProducts.map((product, index) => (
             <Card key={index} product={product} />
           ))
-        ) : products.length > 0 ? (
-          products.map((product, index) => (
-            <Card key={index} product={product} navigate={navigate} />
-          ))
+        ) : filterResponse.length ? (
+          <h2>{filterResponse}</h2>
         ) : (
           <p>Loading...</p>
         )}
