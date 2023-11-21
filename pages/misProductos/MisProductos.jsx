@@ -107,7 +107,7 @@ const MisProductos = () => {
       <section className='mainCardContainer'>
         {filteredProducts.length ? (
           filteredProducts.map((product, index) => (
-            <Card key={index} product={product} />
+            <Card key={index} product={product} navigate={navigate} />
           ))
         ) : filterResponse.length ? (
           <h2>{filterResponse}</h2>
