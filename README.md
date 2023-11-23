@@ -31,3 +31,25 @@
 12. Primero se debe crear el json server de manera local, luego este se debe subir a un repositorio en la nube, y en el hosting se desplegará a partir del repositorio.
 
 13. Similarmente al punto anterior se debe seleccionar la rama main del repositorio que se quiera desplegar, el hosting se encargara de realizar todo el proceso.
+
+## MÓDULO SOBRE GESTION DE ESTADOS Y DATOS CON REACT CONTEXT Y USEREDUCER
+
+1. React  context es una característica que permite compartir información entre componentes sin necesidad de utilizar props
+
+2. Para crear un contexto en React se debe utilizar el hook  createContext, este contexto se provee a todos los componentes de la aplicación mediante la propiedad Provider del contexto creado y este contexto se consume usando el hook  useContext.
+
+3. La ventaja es que simplifica el código, la legibilidad del mismo y se evita el props  drilling que se genera al pasar props entre múltiples componentes.
+
+4. useReducer es un hook de React que permite gestionar estados de una manera más organizada, centralizada y escalable, precisamente la diferencia con useState radica en la centralización y escalabilidad en el manejo de los estados.
+
+5. useReducer toma dos argumentos de entrada, el state y el action, el argumento state se refiere al estado anterior y el argumento action contiene el tipo de acción que será ejecutada
+
+6. Por el tema de la escalabilidad ya que las aplicaciones más complejas requieren que se añadan más estados, entonces al tener este manejo de estados centralizado se hace más fácil de escalar y mejorar
+
+7. En este caso se podría utilizar en la autenticación de un usuario en una aplicación, ya que con el contexto podremos saber si el usuario está  logueado o no y con el reducer podemos disparar los estados para que el usuario quede efectivamente logueado o deslogueado
+
+8. Por el tema de la escalabilidad, la corrección de errores y la facilidad que conlleva que los estados esteen centralizados.
+
+9. facil escalabilidad, facil mantenimiento, centralización del manejo de estados,se evita el prop  drilling
+
+10. Esto es de gran beneficio cuando las aplicaciones crecen ya que a pesar de que el código se vuelve un poco complejo el concepto se hace más sencillo y manejable
