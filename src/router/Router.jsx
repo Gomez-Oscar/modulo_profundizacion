@@ -7,7 +7,7 @@ import Layout from '../../components/layout/Layout';
 import ProductDetails from '../../pages/productDetails/ProductDetails';
 import MiContadorConUseReducer from '../../pages/miContadorConUseReducer/MiContadorConUseReducer';
 import PublicRoutes from './PublicRoutes';
-import PrivateRoutes from './privateRoutes';
+import PrivateRoutes from './PrivateRoutes';
 import userLoggedReducer, {
   userLoggedInitial,
 } from '../../reducers/userLoggedReducer';
