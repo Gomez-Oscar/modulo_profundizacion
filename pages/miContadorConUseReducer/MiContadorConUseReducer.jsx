@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import { counterReducer } from '../../reducers/counterReducer';
-import '../miContador/MiContador.scss';
 
 const MiContadorConUseReducer = () => {
   const [counter, counterDispatch] = useReducer(counterReducer, { count: 0 });
